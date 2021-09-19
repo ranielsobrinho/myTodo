@@ -1,0 +1,18 @@
+.emailInput{
+    background-color: #848484;
+    border: none;
+    border-radius: 5px;
+    width: 30rem;
+    height: 2rem;
+}
+
+.submit{
+    background-color: cadetblue;
+    color: white;
+    font-size: .9rem;
+    border: 1px solid cadetblue;
+    width: 5rem;
+    height: 2rem;
+    border-radius: .2rem;
+    margin-top: .3rem;
+}
