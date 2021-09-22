@@ -1,3 +1,6 @@
+/* div{
+    background-color: #696969;
+} */
 nav{
     display: flex;
     justify-content: space-between;
@@ -18,29 +21,3 @@ nav{
 .LoginForm>Form>input{
     width:15rem
 }
-
-.RegisterForm{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 0 .5rem;
-    margin: .5rem;
-} 
-
-.RegisterForm>Form{
-    display: flex;
-    flex-direction: column;
-}
- 
-.RegisterForm>Form>Button{
-    align-self: flex-end;
-}
-
-h3{
-    margin-left: .5rem;
-    max-width: 30rem;
-    font-size: 2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-} 
