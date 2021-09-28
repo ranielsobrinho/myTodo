@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import api from '../../services/Api';
 import './index.css'
 
 function Form(props){
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
     const handleEmail = e => {
@@ -13,14 +15,34 @@ function Form(props){
         setPassword(e.target.value);
     }
 
+    const handleName = e => {
+        setName(e.target.value);
+    }
+
     const handleSubmit = e => {
         e.preventDefault();
-        email('');
-        password('');
+        setName('');
+        setEmail('');
+        setPassword('');
+
+        api.post('/users', {
+            name,
+            email,
+            password
+        }).then(() => {
+            console.log('Dados inseridos na tabela');
+        }).catch((err) => console.log(err));
     }
 
     return(        
             <form onSubmit={handleSubmit}>
+                <input type="text" 
+                placeholder="Name" 
+                value={name} 
+                name="name" 
+                className="input"
+                onChange={handleName}/>
+
                 <input type="text" 
                 placeholder="E-mail" 
                 value={email} 
