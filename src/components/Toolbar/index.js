@@ -1,14 +1,14 @@
 import React from 'react'
 import './index.css'
-import Form from '../Form'
+import SignInForm from '../SignInForm';
 
 export default function Toolbar () {
         return (
-            <div>
+            <div className="Toolbar">
                 <nav>
                     <h2 className="Logo">MyTodo</h2>
                     <div className="LoginForm" >
-                        <Form name="Login"/>
+                        <SignInForm />
                     </div>
                 </nav>
             </div>
