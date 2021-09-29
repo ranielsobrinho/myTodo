@@ -22,7 +22,7 @@ export default function SignInForm (){
             email,
             password
         }).then((response) => {
-            console.log(response.data);
+            sessionStorage.setItem('token', response.data.token);
         }).catch((err) => console.log(err));
     }
 
