@@ -12,8 +12,8 @@ export default function TodoForm() {
         e.preventDefault();
         setTodo('');
 
-        // TODO salvar o id do usuário e passá-lo aqui
-        api.post('/users/6/todos', todo)
+        const userId = sessionStorage.getItem('userId');
+        api.post(`/users/${userId}/todos`, todo)
         .then((response) => {
             console.log(response.data);
         }).catch((err) => console.log(err));
