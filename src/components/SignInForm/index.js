@@ -23,6 +23,7 @@ export default function SignInForm (){
             password
         }).then((response) => {
             sessionStorage.setItem('token', response.data.token);
+            sessionStorage.setItem('userId', response.data.userId);
         }).catch((err) => console.log(err));
     }
 
