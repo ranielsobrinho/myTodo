@@ -3,7 +3,6 @@ import './index.css';
 
 import Toolbar from '../../components/Toolbar';
 import Form from '../../components/Form';
-// import Todos from '../TodosPage';
 
 export default function Home () {
         return (
@@ -13,7 +12,6 @@ export default function Home () {
                     <h3>Come to finish all your tasks and stay productive.</h3>
                     <Form name="Register"/>
                 </div>
-                {/* <Todos /> */}
             </div>
         )
 }
