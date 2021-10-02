@@ -10,8 +10,8 @@ nav{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    /* margin: .5rem; */
-    padding: 0 .5rem;
+    align-items: baseline;
+    padding: 0.2rem .5rem;
 }
 .Logo{
     color: cadetblue;
