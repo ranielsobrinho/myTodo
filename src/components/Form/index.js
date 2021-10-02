@@ -30,8 +30,8 @@ function Form(props){
             email,
             password
         }).then(() => {
-            console.log('Dados inseridos na tabela');
-        }).catch((err) => console.log(err));
+            alert('Cadastro feito com sucesso! Faça o login e aproveite.');
+        }).catch((err) => alert('Houve um problema no envio dos dados.'));
     }
 
     return(        
