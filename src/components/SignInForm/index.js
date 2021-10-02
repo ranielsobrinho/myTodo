@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
+
 import api from '../../services/Api';
 
 export default function SignInForm (){
@@ -12,6 +14,7 @@ export default function SignInForm (){
     const handlePassword = e => {
         setPassword(e.target.value);
     }
+    const history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -24,7 +27,8 @@ export default function SignInForm (){
         }).then((response) => {
             sessionStorage.setItem('token', response.data.token);
             sessionStorage.setItem('userId', response.data.userId);
-        }).catch((err) => console.log(err));
+            history.push('/todos');
+        }).catch((err) => alert('Cadastre-se para utilizar nossos serviços'));
     }
 
     return(        
