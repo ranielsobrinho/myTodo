@@ -18,7 +18,7 @@ export default function TodoForm() {
             content: todo
         })
         .then(() => {
-            alert('Deu certo');
+            
         }).catch((err) => alert(err));
         
     }
