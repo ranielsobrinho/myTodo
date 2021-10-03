@@ -17,6 +17,8 @@
     background-color: #1C1D1F;
 
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-out;
+
     border-radius: 5px;
 
     width: 100%;
@@ -24,9 +26,12 @@
     padding: 0.5rem .2rem;
 }
 
+.todos:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.06);;
+}
+
 .buttons{
-    /* display: flex;
-    align-items: baseline; */
     margin: 0 5px;
 }
 
