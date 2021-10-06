@@ -35,10 +35,12 @@
     margin: 0 5px;
 }
 
-button:nth-child(1){
+button{
     margin-right: 5px;
+    cursor: pointer;
 }
 
-button{
-    cursor: pointer;
+p{
+    width: 80%;
+    height: 1.5rem;
 }
