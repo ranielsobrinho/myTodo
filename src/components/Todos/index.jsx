@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {useHistory} from 'react-router-dom'
 
 import Api from '../../services/Api'
 import './index.css'
@@ -18,7 +19,7 @@ export default function Todos(){
         
     function deleteTodo(id) {
         Api.delete(`/todos/${id}`)
-        .then((res) => {
+        .then(() => {
             // TODO: mostrar mensagem de retorno
             setTodos(todos.filter(todo => todo.id !== id));
         })
@@ -29,10 +30,15 @@ export default function Todos(){
         Api.put(`/todos/${id}`, {
             done: true
         })
-            .then((res) => {
+            .then(() => {
                 // TODO: mostrar mensagem de retorno
             })
             .catch(err => alert(err));
+    }
+
+    let history = useHistory();
+    const redirect = (id) => {
+        history.push(`/edit/${id}`);
     }
 
     return(
@@ -40,8 +46,8 @@ export default function Todos(){
             {todos
                 .map((todo, id) => {
                     return (
-                        <div key={id} className="todos">
-                            <p>{todo.content}</p>
+                        <div key={id} className="todos"  >
+                                <p onClick={ () => redirect(todo.id) }>{todo.content}</p>
                             <div className="buttons">
                                 <Button onClick={ () => doneTodo(todo.id)} name="V"/>
                                 <Button onClick={ () => deleteTodo(todo.id) } name="X"/>
