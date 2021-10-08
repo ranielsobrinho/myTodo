@@ -11,10 +11,16 @@ nav{
     justify-content: space-between;
     flex-direction: row;
     align-items: baseline;
-    padding: 0.2rem .5rem;
+    padding: 0 .5rem;
+    width: 99%;
 }
 .Logo{
     color: cadetblue;
+}
+
+.Logo> svg{
+    padding-top: 0.2rem;
+    height: 1.5rem;
 }
 
 .LoginForm{
