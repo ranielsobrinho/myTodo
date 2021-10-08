@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom'
 
+import { MdDoneOutline, MdOutlineClose } from "react-icons/md";
+
 import Api from '../../services/Api'
 import './index.css'
-import Button from '../Button';
+//import Button from '../Button';
 
 export default function Todos(){
     const [todos, setTodos] = useState([]);
@@ -17,8 +19,8 @@ export default function Todos(){
             .catch(err => console.log(err));
         }, [todos]);
         
-    function deleteTodo(id) {
-        Api.delete(`/todos/${id}`)
+    async function deleteTodo(id) {
+        await Api.delete(`/todos/${id}`)
         .then(() => {
             // TODO: mostrar mensagem de retorno
             setTodos(todos.filter(todo => todo.id !== id));
@@ -26,8 +28,8 @@ export default function Todos(){
         .catch(err => alert(err))
     }
 
-    function doneTodo(id) {
-        Api.put(`/todos/${id}`, {
+    async function doneTodo(id) {
+        await Api.put(`/todos/${id}`, {
             done: true
         })
             .then(() => {
@@ -49,8 +51,9 @@ export default function Todos(){
                         <div key={id} className="todos"  >
                                 <p onClick={ () => redirect(todo.id) }>{todo.content}</p>
                             <div className="buttons">
-                                <Button onClick={ () => doneTodo(todo.id)} name="V"/>
-                                <Button onClick={ () => deleteTodo(todo.id) } name="X"/>
+                                <button onClick={ () => doneTodo(todo.id)} ><MdDoneOutline /></button>
+                                <button onClick={ () => deleteTodo(todo.id) }><MdOutlineClose /> </button>
+                                
                             </div>
                         </div>
                     )
