@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import api from '../../services/Api';
 import './index.css';
-import Button from '../Button';
+import {MdAddTask} from 'react-icons/md';
 
 export default function TodoForm() {
     const [todo, setTodo] = useState('');
@@ -36,7 +36,7 @@ export default function TodoForm() {
                 onChange={handleTodo}
                 />
 
-                <Button name="Add" />
+                <button><MdAddTask /></button>
             </form>
         </div>
     )
