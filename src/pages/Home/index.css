@@ -17,6 +17,7 @@ body{
     align-items: center;
     height: 100vh;
     padding: 0 .5rem;
+    width: 99%;
 } 
 
 .RegisterForm>Form{
@@ -26,7 +27,8 @@ body{
  
 .RegisterForm>Form>Button{
     align-self: flex-end;
-    margin-right: .2rem;
+    margin-right: 0.2rem;
+    width: 5rem;
 }
 
 h3{
