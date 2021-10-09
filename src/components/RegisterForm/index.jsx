@@ -45,7 +45,7 @@ function RegisterForm(props){
                 className="input"
                 onChange={handleName}/>
 
-                <input type="text" 
+                <input type="email" 
                 placeholder="E-mail" 
                 value={email} 
                 name="email" 
