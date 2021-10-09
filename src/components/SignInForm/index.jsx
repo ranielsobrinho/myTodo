@@ -35,7 +35,7 @@ export default function SignInForm (){
 
     return(        
             <form onSubmit={handleSubmit}>
-                <input type="text" 
+                <input type="email" 
                 placeholder="E-mail" 
                 value={email} 
                 name="email" 
@@ -50,7 +50,7 @@ export default function SignInForm (){
                 onChange={handlePassword}
                 />
 
-                <Button className="submit" name="SignIn" />
+                <Button name="SignIn" />
             </form>
     );
 }
