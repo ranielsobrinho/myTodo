@@ -1,17 +1,26 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './index.css';
 
-import Toolbar from '../../components/Toolbar';
+
+import SignInForm from '../../components/SignInForm';
 import RegisterForm from '../../components/RegisterForm';
 
 export default function Home () {
-        return (
-            <div>
-                <Toolbar />
-                <div className="RegisterForm">
-                    <h3>Come to finish all your tasks and stay productive.</h3>
-                    <RegisterForm />
+    const [login, setLogin] = useState(true);
+
+    function toggleLogin(){
+        setLogin(!login);
+    }
+
+    return (
+        <div>
+            <div className="toggleForm">
+                {login ? <SignInForm /> : <RegisterForm />}
+                <div className="toggleMessage">
+                    <p>Don't have an account?</p>
+                    <button onClick={() => {toggleLogin()}}>Click here to register.</button>
                 </div>
             </div>
-        )
+        </div>
+    )
 }

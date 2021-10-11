@@ -10,30 +10,44 @@ body{
     box-sizing: border-box;
 }
 
-.RegisterForm{
+.toggleForm{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-end;
     height: 100vh;
     padding: 0 .5rem;
     width: 99%;
 } 
 
-.RegisterForm>Form{
+.toggleForm>Form{
     display: flex;
     flex-direction: column;
 }
  
-.RegisterForm>Form>Button{
+.toggleForm>Form>Button{
     align-self: flex-end;
     margin-right: 0.2rem;
     width: 5rem;
 }
 
-h3{
-    margin-left: .2rem;
-    max-width: 30rem;
-    font-size: 2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-} 
+.toggleMessage{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    margin: 1rem -2px 1rem 0px;
+}
+
+.toggleMessage > button{
+    width: 15rem;
+    padding: 0px 5px;
+    border: none;
+    background-color: #444444;
+    border-bottom: 1px solid white;
+}
+
+.swal-button{
+    width: auto;
+    height: auto;
+}
