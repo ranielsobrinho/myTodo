@@ -62,14 +62,14 @@ export default function Todos(){
     }
 
     return(
-        <div className="container">
+        <div className="containerDone">
             {!loading && <Loading />}
             {todos
                 .map((todo, id) => {
                     return (
-                        <div key={id} className="todos"  >
-                                <p onClick={ () => redirect(todo.id) }>{todo.content}</p>
-                            <div className="buttons">
+                        <div key={id} className="doneTodos"  >
+                                <p className="doneTodo" onClick={ () => redirect(todo.id) }>{todo.content}</p>
+                            <div className="doneButtons">
                                 <button onClick={ () => undoneTodo(todo.id)} ><MdDoneOutline /></button>
                                 <button onClick={ () => deleteTodo(todo.id) }><MdOutlineClose /> </button>
                             </div>
