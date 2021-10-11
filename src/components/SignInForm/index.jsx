@@ -40,14 +40,16 @@ export default function SignInForm (){
                 value={email} 
                 name="email" 
                 className="input"
-                onChange={handleEmail}/>
+                onChange={handleEmail}
+                minLength="8"/>
 
                 <input type="password"
-                placeholder="Password"
+                placeholder="Senha"
                 value={password}
                 name="password"
                 className="input"
                 onChange={handlePassword}
+                minLength="8"
                 />
 
                 <Button name="SignIn" />
