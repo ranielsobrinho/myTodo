@@ -1,0 +1,23 @@
+.dataContent{
+    background-color: #444444;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 50rem;
+    background-color: #1C1D1F;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.alignButton{
+    align-self: center;
+    width: 4rem;
+}
