@@ -44,3 +44,7 @@ p{
     width: 80%;
     height: 1.5rem;
 }
+
+h3{
+    align-self: center;
+}

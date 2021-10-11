@@ -2,30 +2,48 @@ import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom'
 
 import { MdDoneOutline, MdOutlineClose } from "react-icons/md";
+import Loading from '../Loading'
+import swal from 'sweetalert';
 
 import Api from '../../services/Api'
 import './index.css'
-//import Button from '../Button';
 
 export default function Todos(){
     const [todos, setTodos] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const userId = sessionStorage.getItem('userId');
         Api.get(`/users/${userId}/todos`)
             .then((res) => {
                 setTodos(res.data.filter(todo => todo.done === false));
+                setLoading(true);
             })
             .catch(err => console.log(err));
         }, [todos]);
         
     async function deleteTodo(id) {
-        await Api.delete(`/todos/${id}`)
-        .then(() => {
-            // TODO: mostrar mensagem de retorno
-            setTodos(todos.filter(todo => todo.id !== id));
-        })
-        .catch(err => alert(err))
+        swal({
+            title: "Tem certeza?",
+            text: "Uma vez deletado, não poderá recuperar!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                Api.delete(`/todos/${id}`)
+                    .then(() => {
+                        setTodos(todos.filter(todo => todo.id !== id));
+                    })
+                    .catch(err => alert(err))
+                swal("Poof! Sua tarefa foi deletada!", {
+                    icon: "success",
+                });
+            } else {
+              swal("Your todo are safe!");
+            }
+          });
     }
 
     async function doneTodo(id) {
@@ -33,7 +51,7 @@ export default function Todos(){
             done: true
         })
             .then(() => {
-                // TODO: mostrar mensagem de retorno
+                swal("Bom trabalho!", "Você finalizou uma tarefa! Parabéns", "success");
             })
             .catch(err => alert(err));
     }
@@ -45,6 +63,7 @@ export default function Todos(){
 
     return(
         <div className="container">
+            {!loading && <Loading />}
             {todos
                 .map((todo, id) => {
                     return (
@@ -53,12 +72,12 @@ export default function Todos(){
                             <div className="buttons">
                                 <button onClick={ () => doneTodo(todo.id)} ><MdDoneOutline /></button>
                                 <button onClick={ () => deleteTodo(todo.id) }><MdOutlineClose /> </button>
-                                
                             </div>
                         </div>
                     )
                 })
             }
+            {todos.length === 0 && <h3>Nenhuma tarefa a ser feita.</h3>}
 
         </div>
     )
