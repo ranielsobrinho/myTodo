@@ -30,10 +30,11 @@ export default function TodoForm() {
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text"
-                placeholder="Add new todo"
+                placeholder="Adicione uma tarefa"
                 value={todo}
                 name='todo'
                 onChange={handleTodo}
+                minLength="5"
                 />
 
                 <button><MdAddTask /></button>
