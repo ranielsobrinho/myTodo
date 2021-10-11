@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 import TodoForm from '../../components/TodoForm';
-import Todos from '../../components/Todos';
+import ToggleTodos from '../../components/ToggleTodos';
 import Toolbar from '../../components/Toolbar'
 
 export default function index() {
@@ -10,7 +10,7 @@ export default function index() {
         <div className="todoPage">
             <Toolbar />
             <TodoForm />
-            <Todos />
+            <ToggleTodos />
         </div>
     )
 }
