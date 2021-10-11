@@ -45,17 +45,19 @@ export default function EditTodo() {
         <div className="edit">
             <h3>Editar todo</h3>
             <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="editForm">
                 <input 
+                className="editTodo"
                 type="text"
                 placeholder="Edite sua tarefa"
                 value={edited}
                 name='todo'
                 onChange={handleEdited}
                 />
-
-                <button><MdEdit />Editar</button>
-                <Button name="Cancelar" onClick={() => cancel()}/>
+                <div className="editButtons">
+                    <button><MdEdit />Editar</button>
+                    <Button name="Cancelar" onClick={() => cancel()}/>
+                </div>
             </form>
         </div>
         </div>
