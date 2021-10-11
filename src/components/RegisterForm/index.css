@@ -17,3 +17,15 @@
     border-radius: .2rem;
     margin-top: .2rem;
 }
+
+@media screen and (max-width: 375px){
+    .input{
+        width:22rem
+    }
+}
+
+@media screen and (min-width: 750px and max-width 1280px){
+    .input{
+        width:24rem
+    }
+}

@@ -18,7 +18,7 @@ nav{
     color: cadetblue;
 }
 
-.Logo> svg{
+.Logo > svg{
     padding-top: 0.2rem;
     height: 1.5rem;
 }
@@ -26,4 +26,16 @@ nav{
 .button{
     width:4.5rem;
     height: 1.9rem;
+}
+
+@media screen and (max-width: 375px){
+    .button{
+        width:4.5rem;
+        height: 1.9rem;
+    }
+    .button > svg{
+        padding-top: 0.2rem;
+        height: .9rem;
+    }
+
 }

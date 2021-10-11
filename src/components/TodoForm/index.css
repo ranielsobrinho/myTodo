@@ -6,7 +6,7 @@ form{
     margin-top: .2rem;
 }
 
-input{
+.todoInput{
     background-color: #848484;
     border: none;
     border-radius: 5px;
@@ -15,7 +15,7 @@ input{
     margin: .2rem;
 }
 
-input:focus{
+.todoInput:focus{
     border-color: cadetblue;
 }
 
@@ -28,4 +28,10 @@ button{
     height: 1.9rem;
     border-radius: .2rem;
     margin-top: .3rem;
+}
+
+@media screen and (max-width: 375px) {
+    .todoInput{
+        width:29rem;
+    }
 }
