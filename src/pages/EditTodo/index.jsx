@@ -48,14 +48,14 @@ export default function EditTodo() {
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text"
-                placeholder="Add new todo"
+                placeholder="Edite sua tarefa"
                 value={edited}
                 name='todo'
                 onChange={handleEdited}
                 />
 
-                <button><MdEdit />Edit</button>
-                <Button name="Cancel" onClick={() => cancel()}/>
+                <button><MdEdit />Editar</button>
+                <Button name="Cancelar" onClick={() => cancel()}/>
             </form>
         </div>
         </div>
