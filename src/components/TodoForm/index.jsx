@@ -29,6 +29,7 @@ export default function TodoForm() {
         <div>
             <form onSubmit={handleSubmit}>
                 <input 
+                className="todoInput"
                 type="text"
                 placeholder="Adicione uma tarefa"
                 value={todo}
