@@ -39,7 +39,7 @@ export default function SignInForm (){
                 placeholder="E-mail" 
                 value={email} 
                 name="email" 
-                className="input"
+                className="signInInput"
                 onChange={handleEmail}
                 minLength="8"/>
 
@@ -47,7 +47,7 @@ export default function SignInForm (){
                 placeholder="Senha"
                 value={password}
                 name="password"
-                className="input"
+                className="signInInput"
                 onChange={handlePassword}
                 minLength="8"
                 />
