@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Typing from 'react-typing-animation';
+//import Typing from 'react-typing-animation';
 import './index.css';
 
 
@@ -16,18 +16,14 @@ export default function Home () {
     return (
         <div className="homeContainer">
             <div className="writerContent">
-                <Typing loop="true">
-                    <h1>Venha finalizar suas tarefas.</h1>
-                    <Typing.Backspace count={30} />
-                    <h1>Permaneça produtivo.</h1>
-                    <Typing.Backspace count={21} />
-                </Typing>
+                    <h1 className="typedOut t1">Venha finalizar suas tarefas.</h1>
+                    <h1 className="typedOut2 t2">Permaneça produtivo.</h1>
             </div>
             <div className="toggleForm">
                 {login ? <SignInForm /> : <RegisterForm />}
                 <div className="toggleMessage">
                     <p>Não tem uma conta?</p>
-                    <button onClick={() => {toggleLogin()}}>Clique aqui para se registrar.</button>
+                    <button onClick={() => {toggleLogin()}}>Registre-se aqui.</button>
                 </div>
             </div>
         </div>
