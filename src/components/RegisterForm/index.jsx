@@ -5,7 +5,7 @@ import './index.css'
 import Button from '../Button';
 import swal from 'sweetalert'
 
-function RegisterForm(props){
+function RegisterForm(){
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -38,7 +38,7 @@ function RegisterForm(props){
     }
 
     return(        
-            <form onSubmit={handleSubmit}>
+            <form className="registerForm" onSubmit={handleSubmit}>
                 <input type="text" 
                 placeholder="Nome" 
                 value={name} 

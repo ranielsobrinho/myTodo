@@ -34,7 +34,7 @@ export default function SignInForm (){
     }
 
     return(        
-            <form onSubmit={handleSubmit}>
+            <form className="signInForm" onSubmit={handleSubmit}>
                 <input type="email" 
                 placeholder="E-mail" 
                 value={email} 
