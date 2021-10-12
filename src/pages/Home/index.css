@@ -62,14 +62,51 @@ body{
     height: auto;
 }
 
-@media screen and (max-width: 375px) {
+.writerContent{
+    display: inline-block;
+}
+
+.typedOut{
+    overflow: hidden;
+    border-right: .15em solid cadetblue;
+    font-size: 2rem;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(25, start) forwards,
+               blink .5s infinite;
+}
+
+.typedOut2{
+    overflow: hidden;
+    border-right: .15em solid cadetblue;
+    font-size: 2rem;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(25, end) forwards ,
+               blink .5s infinite;
+    animation-delay: 3s;
+}
+
+@keyframes typing{
+    from {width: 0}
+    to {width: 100%}
+}
+
+@keyframes blink {
+    from {border-color: transparent}
+    to {border-color: cadetblue}
+}
+
+@media only screen and (max-width: 599px) {
     .homeContainer{
         flex-direction: column;
     }
     .writerContent{
         width:90%;
-        font-size:10px;
         height:30vh;
+    }
+    .typedOut, .typedOut2{
+        font-size: 1.3rem;
     }
     .toggleForm{
         width: 100%;
@@ -77,12 +114,20 @@ body{
     }
 }
 
-@media screen and (min-width: 750px and max-width 1280px){
+@media only screen and (min-width: 600px and max-width 1280px){
+    .homeContainer{
+        flex-direction: column;
+    }
+
+    .typedOut, .typedOut2{
+        font-size: 2rem;
+    }
+
     .writerContent{
-        width:50%;
+        width:65%;
         font-size:1rem;
     }
     .toggleForm{
-        width: 50%;
+        width: 100%;
     }
 }

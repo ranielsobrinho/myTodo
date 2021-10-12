@@ -1,3 +1,10 @@
+.signInForm {
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 form > button{
     height: 1.9rem;
     width: 4rem;
@@ -12,14 +19,18 @@ form > button{
     margin: .2rem;
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 599px){
     .signInInput{
         width:22rem
     }
+    .signInForm{
+        border: none;
+        padding: 0;
+    }
 }
 
-@media screen and (min-width: 750px and max-width 1280px){
+@media screen and (min-width: 600px){
     .signInInput{
-        width:24rem
+        width:22rem;
     }
 }

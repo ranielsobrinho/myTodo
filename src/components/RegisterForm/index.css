@@ -1,3 +1,9 @@
+.registerForm{
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
 .input{
     background-color: #848484;
     border: none;
@@ -21,6 +27,10 @@
 @media screen and (max-width: 375px){
     .input{
         width:22rem
+    }
+    .registerForm{
+        border: none;
+        padding: 0;
     }
 }
 
