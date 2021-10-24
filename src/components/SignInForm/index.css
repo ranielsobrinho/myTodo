@@ -29,7 +29,7 @@ form > button{
     }
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 750px and max-width 1280px){
     .signInInput{
         width:22rem;
     }
